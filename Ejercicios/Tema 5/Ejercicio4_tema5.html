@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - Diseño de Ancho Fijo</title>
+    <style>
+        /* Estilos para lograr el ancho fijo de 800px y centrarlo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-principal {
+            width: 800px;           /* Ancho fijo requerido */
+            margin: 0 auto;         /* Centra la página horizontalmente */
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra estética opcional */
+            border-radius: 8px;
+        }
+
+        header, section, footer {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Contenedor con ancho fijo y centrado -->
+<div class="contenedor-principal">
+    <header>
+        <h1>Ejercicio 4: Página de Ancho Fijo</h1>
+    </header>
+
+    <section>
+        <p>Esta página web mantiene un diseño de ancho fijo exactamente de <strong>800 píxeles</strong>, sin importar si redimensionas la ventana del navegador[cite: 1].</p>
+        <p>Además, se ha logrado <strong>centrarla</strong> horizontalmente utilizando la propiedad CSS <code>margin: 0 auto;</code> aplicada al contenedor principal.</p>
+    </section>
+
+    <footer>
+        <p><small>Desarrollado para entornos de prácticas en WebStorm.</small></p>
+    </footer>
+</div>
+
+</body>
+</html>
