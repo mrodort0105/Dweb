@@ -3,210 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dweb / Ejercicios - GitHub</title>
+    <title>Desarrollo Web - Ejercicios</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f6f8fa;
-            color: #24292f;
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
             padding: 20px;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border: 1px solid #d0d7de;
-            border-radius: 6px;
-            overflow: hidden;
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* Cabecera del repositorio */
-        .repo-header {
-            padding: 16px;
-            background-color: #f6f8fa;
-            border-bottom: 1px solid #d0d7de;
-            font-size: 14px;
-            color: #57606a;
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
         }
 
-        .repo-header a {
-            color: #0969da;
-            text-decoration: none;
+        header h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 8px;
         }
 
-        .repo-header a:hover {
-            text-decoration: underline;
+        header p {
+            color: #7f8c8d;
+            font-size: 15px;
         }
 
-        /* Último commit */
-        .commit-bar {
+        .temas-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tema-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 16px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #d0d7de;
-            font-size: 13px;
+            padding: 18px 24px;
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .commit-info {
+        .tema-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            border-color: #3498db;
+        }
+
+        .tema-info {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 15px;
         }
 
-        .avatar {
-            width: 20px;
-            height: 20px;
-            background-color: #8250df;
+        .tema-num {
+            background-color: #3498db;
+            color: #fff;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            display: inline-block;
-        }
-
-        .commit-msg {
-            color: #24292f;
-            text-decoration: none;
-        }
-
-        .commit-msg:hover {
-            color: #0969da;
-        }
-
-        .commit-meta {
-            color: #57606a;
-        }
-
-        /* Tabla de archivos */
-        .file-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-
-        .file-table th {
-            background-color: #f6f8fa;
-            color: #57606a;
-            font-weight: 600;
-            text-align: left;
-            padding: 10px 16px;
-            border-bottom: 1px solid #d0d7de;
-        }
-
-        .file-table td {
-            padding: 8px 16px;
-            border-bottom: 1px solid #d8dee4;
-        }
-
-        .file-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .file-table tr:hover {
-            background-color: #f6f8fa;
-        }
-
-        .file-name {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: #0969da;
-            text-decoration: none;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
         }
 
-        .file-name:hover {
-            text-decoration: underline;
+        .tema-titulo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
-        .folder-icon {
-            color: #54aeff;
+        .btn-ver {
+            background-color: #e8f4fc;
+            color: #3498db;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
-        .commit-message-col {
-            color: #57606a;
-        }
-
-        .time-col {
-            color: #57606a;
-            text-align: right;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- Cabecera de ruta -->
-        <div class="repo-header">
-            <strong><a href="#">Dweb</a></strong> / <strong><a href="#">Ejercicios</a></strong>
-        </div>
-
-        <!-- Barra del último commit -->
-        <div class="commit-bar">
-            <div class="commit-info">
-                <span class="avatar"></span>
-                <a href="#" style="font-weight: 600; color: #24292f; text-decoration: none;">mrodort0105</a>
-                <a href="#" class="commit-msg">Add files via upload</a>
-            </div>
-            <div class="commit-meta">
-                <span>f1ae5ef</span> &bull; <span style="color: #57606a;">2 minutes ago</span>
-            </div>
-        </div>
-
-        <!-- Tabla estilo GitHub -->
-        <table class="file-table">
-            <thead>
-                <tr>
-                    <th style="width: 40%;">Name[cite: 1]</th>
-                    <th style="width: 45%;">Last commit message[cite: 1]</th>
-                    <th style="width: 15%; text-align: right;">Last commit date[cite: 1]</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="3">
-                        <a href="#" class="file-name">
-                            <span class="folder-icon">📁</span> ..
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#" class="file-name">
-                            <span class="folder-icon">📁</span> Tema 1[cite: 1]
-                        </a>
-                    </td>
-                    <td class="commit-message-col">Add files via upload[cite: 1]</td>
-                    <td class="time-col">last week[cite: 1]</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#" class="file-name">
-                            <span class="folder-icon">📁</span> Tema 2[cite: 1]
-                        </a>
-                    </td>
-                    <td class="commit-message-col">Add files via upload[cite: 1]</td>
-                    <td class="time-col">last week[cite: 1]</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#" class="file-name">
-                            <span class="folder-icon">📁</span> Tema 3[cite: 1]
-                        </a>
-                    </td>
-                    <td class="commit-message-col">Add files via upload[cite: 1]</td>
-                    <td class="time-col">last week[cite: 1]</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#" class="file-name">
-                            <span class="folder-icon">📁</span> Tema 4[cite: 1]
-                        </a>
-                    </td>
-                    <td class="commit-message-col">Add files via upload[cite: 1]</td>
-                    <td class="time-col">last week[cite: 1]</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#" class="file-name">
-                            <span class="folder-
+        .tema-card:
