@@ -1,0 +1,56 @@
+Disponemos de los siguientes archivos.
+estilos.css:
+h1 {
+    color: blue;
+    font-size: 30px;
+}
+
+p {
+    color: black;
+}
+Documento HTML:
+<head>
+<link rel="stylesheet" href="estilos.css">
+
+<style>
+ h1 {
+     color: green;
+ }
+
+p {
+    color: orange;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+/**<h1 style="color: black;">Mi página web</h1>**/ /**Apartado 5**/
+<h1>Mi página web</h1>
+
+<p>Primer párrafo.</p>
+
+<p style="color: red;">Segundo párrafo.</p>
+
+</body>
+
+  /** Cuestiones
+  ¿De qué color aparece el título?
+  Verde, porque el estilo interno (<style>) sobrescribe al externo.
+
+  ¿Qué tamaño tiene el título?
+  30px.
+
+  ¿De qué color aparece el primer párrafo?
+  Naranja por el estilo interno.
+  ¿De qué color aparece el segundo párrafo?
+  Rojo, porque el estilo en línea tiene máxima prioridad.
+
+  Modifica el HTML para que el título aparezca en negro utilizando un estilo en línea.
+
+  Elimina los estilos internos. ¿Qué sucede con los colores?
+Título: Pasa a azul (del archivo externo, si aún no tiene el estilo en línea).
+Primer párrafo: Pasa a negro (del archivo externo).
+Segundo párrafo: Sigue siendo rojo (mantiene su estilo en línea).
+**/

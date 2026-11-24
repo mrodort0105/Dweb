@@ -1,0 +1,16 @@
+/* Condiciones de diseño: Diseño oscuro */
+body {
+    background-color: #121212; /* Fondo gris oscuro */
+    color: #ffffff;            /* Texto blanco */
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #3399ff;            /* Título: Azul claro */
+}
+
+h2, h3 {
+    color: #ffeb3b;            /* Subtítulos: Amarillo claro */
+}
